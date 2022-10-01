@@ -8,8 +8,8 @@ module.exports = {
       mont: ["Montserrat Alternates", "sans-serif"],
     },
     backgroundImage: () => ({
-      "logo-dark-mode": "url('../dist/logo/logo-dark.png')",
-      "logo-light-mode": "url('../dist/logo/logo-light.png')",
+      "logo-dark-mode": "url('../src/logo/logo-dark.png')",
+      "logo-light-mode": "url('../src/logo/logo-light.png')",
     }),
     extend: {
       spacing: {

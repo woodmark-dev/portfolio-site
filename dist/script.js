@@ -56,7 +56,7 @@ const revealSection = function (entries, observer) {
 
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
-  threshold: 0.15,
+  threshold: 0.1,
 });
 
 allSections.forEach(function (section) {
@@ -68,7 +68,6 @@ allSections.forEach(function (section) {
 
 const stickyNav = function (entries) {
   const [entry] = entries;
-  console.log(entry);
 
   if (!entry.isIntersecting) header.classList.add("sticky");
   if (entry.isIntersecting) header.classList.remove("sticky");
