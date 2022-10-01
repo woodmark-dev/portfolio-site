@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="output.css" rel="stylesheet" />
+    <link rel="icon" href="favi.png" />
+    <script>
+      //https://www.freecodecamp.org/news/how-to-build-a-dark-mode-switcher-with-tailwind-css-and-flowbite/
+      // It's best to inline this in `head` to avoid FOUC (flash of unstyled content) when changing pages or themes
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <script src="script.js" defer></script>
+    <title>Project Details of Quiz App</title>
+  </head>
+  <body class="dark:bg-slate-700 dark:text-white leading-7 w-full">
+    <!-- Header -->
+    <header
+      class="flex justify-between items-center md:pr-10 pr-5 bg-slate-200 dark:bg-slate-700 w-full fixed top-0"
+    >
+      <!-- logo -->
+      <a href="index.html" class="block">
+        <div
+          class="bg-logo-light-mode dark:bg-logo-dark-mode w-48 h-20 bg-no-repeat cursor-pointer"
+        ></div>
+      </a>
+
+      <div class="flex gap-7">
+        <!-- menu -->
+        <div
+          class="flex gap-7 md:text-lg font-bold text-blue-500 dark:text-white invisible cursor-none pointer-events-none md:visible md:cursor-pointer md:pointer-events-auto"
+        >
+          <a
+            href="index.html#about"
+            class="hover:text-blue-800 transition-all duration-500"
+            >About</a
+          >
+          <a
+            href="index.html#projects"
+            class="hover:text-blue-800 transition-all duration-500"
+            >Projects</a
+          >
+          <a
+            href="index.html#contact"
+            class="hover:text-blue-800 transition-all duration-500"
+            >Contact</a
+          >
+        </div>
+        <!-- toggle -->
+        <div class="flex justify-center items-center">
+          <button class="w-5 h-5 hidden" id="dark-mode-btn">
+            <!-- dark -->
+            <ion-icon class="text-xl" name="moon"></ion-icon>
+          </button>
+          <button class="w-6 h-6 hidden" id="light-mode-btn">
+            <!-- light -->
+            <ion-icon class="text-xl" name="sunny-outline"></ion-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="md:hidden pl-3 pt-2">
+        <button
+          id="menu-btn"
+          class="z-40 block hamburger md:hidden focus:outline-none"
+        >
+          <span class="hamburger-top dark:bg-white"></span>
+          <span class="hamburger-middle dark:bg-white"></span>
+          <span class="hamburger-bottom dark:bg-white"></span>
+        </button>
+      </div>
+
+      <div
+        id="menu"
+        class="absolute top-0 bottom-0 left-0 hidden flex-col self-end w-full min-h-screen py-1 pt-40 pl-12 space-y-3 text-lg text-blue-500 uppercase bg-slate-200 dark:bg-slate-700 dark:text-white"
+      >
+        <a href="index.html#about" class="hover:text-blue-800">About</a>
+        <a href="index.html#projects" class="hover:text-blue-800">Projects</a>
+        <a href="index.html#contact" class="hover:text-blue-800">Contact</a>
+      </div>
+    </header>
+
+    <section
+      class="bg-white text-black px-10 dark:bg-slate-700 dark:text-white flex flex-col gap-14 md:mb-28 mb-16 mt-20 items-center section"
+    >
+      <div class="md:px-72 text-center">
+        <h1 class="text-4xl font-bold py-5 uppercase">Quiz App</h1>
+        <p class="pb-3">
+          I have a passion for teaching and learning. So when I was getting
+          comfortable with React, I decided to put myself in the shoes of an
+          instructor who wished to test his students online. I developed this
+          app from scratch using React and the Context API. Although it’s
+          simple, it required some deep thought, especially when I had to
+          maintain a unified state throughout the app.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 md:gap-36 gap-16 text-center">
+        <div class="flex flex-col gap-2">
+          <h1>Live</h1>
+          <a
+            class="w-36 h-10 bg-blue-800 text-white rounded-xl flex items-center justify-center hover:bg-blue-500"
+            href="https://woodmark-quiz-app.netlify.app/"
+            target="_blank"
+            >View Site</a
+          >
+        </div>
+        <div class="flex flex-col gap-2">
+          <h1>TYPE</h1>
+          <p>Side Project</p>
+        </div>
+        <div class="flex flex-col gap-2 justify-center items-center">
+          <h1>STACK</h1>
+          <div class="flex flex-col gap-3">
+            <p
+              class="w-36 border border-blue-800 flex justify-center shadow-lg dark:border-white"
+            >
+              React
+            </p>
+            <p
+              class="w-36 border border-blue-800 flex justify-center shadow-lg dark:border-white"
+            >
+              Context API
+            </p>
+            <p
+              class="w-36 border border-blue-800 flex justify-center shadow-lg dark:border-white"
+            >
+              Tailwind CSS
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <img class="w-200" src="images/woodmark-quiz-app.png" alt="" />
+      </div>
+
+      <div class="md:px-72 text-center">
+        <h1 class="text-xl font-bold py-5">Web Stack and Explanation</h1>
+        <p class="pb-3">
+          React and the Context API made it straightforward to develop this app.
+          It needed a single source of truth, which the Context API provided.
+          And React combined with React Router made navigation a breeze.
+        </p>
+      </div>
+
+      <div class="md:px-72 text-center">
+        <h1 class="text-xl font-bold py-5">Problems and Thought Process</h1>
+        <p class="pb-3">
+          Aside from exercises from tutorials and some personal React challenges
+          that I come up with, this quiz app is my first React project. The most
+          challenging part was maintaining states across different pages. But
+          once I figured it out, I started to appreciate React and its
+          popularity.
+        </p>
+        <p class="pb-3">
+          Also, Tailwind CSS made it easy to style the components without caring
+          about class overrides.
+        </p>
+      </div>
+
+      <div class="md:px-72 text-center">
+        <h1 class="text-xl font-bold py-5">Lessons Learned</h1>
+        <p class="pb-3">
+          This project was an eye-opener in my React journey. It helped me
+          understand the use cases of core React Hooks, including useState and
+          useEffect. I also learned how React Router v6 works and how to use the
+          Context API.
+        </p>
+      </div>
+
+      <div class="md:px-72 text-center">
+        <h1 class="text-2xl font-bold py-5">Other Projects</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div
+            class="flex flex-col items-center gap-2 border-2 rounded-lg shadow-lg border-blue-800"
+          >
+            <div class="pt-8">
+              <img class="w-72" src="images/mirage-e-commerce.jpg" alt="" />
+            </div>
+            <div class="flex flex-col items-center gap-2 pb-8 px-10">
+              <h2 class="text-xl font-medium mb-2">Mirage E-commerce Store</h2>
+              <p class="text-sm">
+                An e-commerce application built with React and firestore.
+              </p>
+              <div class="text-blue-500 text-lg hover:text-blue-300">
+                <a href="mirage.html">View Project &#8594;</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-2 border-2 rounded-lg shadow-lg border-blue-800"
+          >
+            <div class="pt-8">
+              <img class="w-72" src="images/cipi-crypto-app.jpg" alt="" />
+            </div>
+            <div class="flex flex-col items-center gap-2 pb-8 px-10">
+              <h2 class="text-xl font-medium mb-2">Cipio Coin App</h2>
+              <p class="text-sm">
+                A fintech app built with React and Moralis boilerplate for a
+                crypto startup.
+              </p>
+              <div class="text-blue-500 text-lg hover:text-blue-300">
+                <a href="cipio-app.html">View Project &#8594;</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-2 border-2 rounded-lg shadow-lg border-blue-800 col-span-full"
+          >
+            <div class="pt-8">
+              <img class="w-72" src="images/maryamsart-image.jpg" alt="" />
+            </div>
+            <div class="flex flex-col items-center gap-2 pb-8 px-10">
+              <h2 class="text-xl font-medium mb-2">Maryam's Art</h2>
+              <p class="text-sm">
+                A landing page built with vanilla Javascript, HTML, and CSS
+              </p>
+              <div class="text-blue-500 text-lg hover:text-blue-300">
+                <a href="maryamsart.html">View Project &#8594;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer
+      class="bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-t-0 pr-10 flex justify-between items-center"
+    >
+      <div class="flex md:items-center flex-col md:flex-row">
+        <a href="index.html" class="block">
+          <div
+            class="bg-logo-light-mode dark:bg-logo-dark-mode w-24 h-20 bg-no-repeat cursor-pointer"
+          ></div>
+        </a>
+        <div
+          class="flex gap-0 flex-col pl-7 pb-10 md:pb-0 md:flex-row md:gap-5 md:items-center"
+        >
+          <div class="leading-tight md:flex md:gap-1">
+            <p>Designed and built by</p>
+            <p>Ibrahim Ayuba</p>
+          </div>
+          <p>&copy; 2022</p>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <a href="mailto:ibrahimayuba393@gmail.com" target="_blank"
+          ><ion-icon class="text-xl hover:text-blue-500" name="mail"></ion-icon
+        ></a>
+        <a href="https://www.linkedin.com/in/ibrahimayubacodes/" target="_blank"
+          ><ion-icon
+            class="text-xl hover:text-blue-500"
+            name="logo-linkedin"
+          ></ion-icon
+        ></a>
+        <a href="https://github.com/woodmark-dev" target="_blank"
+          ><ion-icon
+            class="text-xl hover:text-blue-500"
+            name="logo-github"
+          ></ion-icon
+        ></a>
+        <a href="https://twitter.com/ibroto2" target="_blank"
+          ><ion-icon
+            class="text-xl hover:text-blue-500"
+            name="logo-twitter"
+          ></ion-icon
+        ></a>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
